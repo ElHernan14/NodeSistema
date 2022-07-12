@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gustavo Arias">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Register User</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center mt-5">
+    <% if(alert) {%>
+        <div class="alert alert-danger" role="alert">
+            <%= alertMessage %>
+        </div>          
+    <% } %>
+    <main class="form-signin text-center shadow-lg p-3 mb-5">
+    <form id="formLogin" action="/register" method="post">
+        <img class="mb-4" src="./../img/logo.png" alt="logo" width="50%" height="50%">
+        <div class="form-floating">
+            <input type="email" class="form-control" id="email" name="email" placeholder="email" autofocus required>
+            <label for="email">Email</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Name" required>
+            <label for="nombre">Name</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Surname" required>
+            <label for="apellido">Surname</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
+            <label for="pass">Password</label>
+        </div>
+        <div class="mb-3">
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Save</button>
+        </div>
+        <div>
+            <a href="/login" type="button" class="w-100 btn btn-lg btn-bd-primary">Cancel</a>
+        </div>
+    </form>
+    </main>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+</html>

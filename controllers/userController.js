@@ -2,7 +2,7 @@
 const conexion = require('../database/db')
 
 //procedure to save
-exports.save = (req,res) =>{
+exports.saveUser = (req,res) =>{
     const email = req.body.email
     const name = req.body.nombre
     const apellido = req.body.apellido
@@ -14,12 +14,12 @@ exports.save = (req,res) =>{
             console.log(error)
         }else{
             console.log('Usuario guardado correctamente')
-            res.redirect('/');
+            res.redirect('/users');
         }
     })
 }
 
-exports.update = (req,res) =>{
+exports.updateUser = (req,res) =>{
     const email = req.body.email
     const name = req.body.nombre
     const apellido = req.body.apellido

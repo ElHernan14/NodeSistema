@@ -1,0 +1,47 @@
+<%- include("template/header") %>
+<%- include("template/navbar") %>
+<%- include("template/aside") %>
+
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+   <!-- Content Header (Page header) -->
+   <%- include("template/breadcrumb", {module: 'Create User'}) %>
+   <section class="content-header">
+     <div class="container-fluid">
+      <div class="row justify-content-center">
+         <div class="col-sm-8">
+           <br>
+           <form action="/saveUser" method="post">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Name</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" tabindex="1" autofocus>
+            </div>
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Surname</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" tabindex="2">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" tabindex="3">
+            </div>
+            <br>
+            <div class="mb-3">
+              <select id="area" name="area" class="form-select" tabindex="4">
+                  <option value="Administracion" selected>Administración</option>
+                  <option value="Gerencia">Gerencia</option>
+                  <option value="Empleado">Contaduria</option>
+              </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" tabindex="5">Create</button>
+            <a href="/users" class="btn btn-secondary">Cancel</a>
+          </form>
+         </div>
+       </div>
+     </div><!-- /.container-fluid -->
+   </section>
+   <!-- /.content -->
+ </div>
+ <!-- /.content-wrapper -->
+
+ <%- include("template/footer") %>

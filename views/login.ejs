@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gustavo Arias">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Login sistema</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center mt-5">
+    <main class="form-signin text-center shadow-lg p-3 mb-5">
+    <form id="formLogin" action="/login" method="post">
+        <img class="mb-4" src="./../img/logo.png" alt="logo" width="50%" height="50%">
+        <div class="form-floating">
+        <input type="email" class="form-control" id="email" name="email" placeholder="email">
+        <label for="email">Email</label>
+        </div>
+        <div class="form-floating">
+        <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+        <label for="pass">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    </form>
+    <br>
+    <a href="/register" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</a>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+    <% if(alert) {%>
+      <script>
+          Swal.fire({
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then(()=>{
+          window.location = '<%= ruta %>'  
+        })
+      </script>
+    <% }%>
+  </body>
+</html>
